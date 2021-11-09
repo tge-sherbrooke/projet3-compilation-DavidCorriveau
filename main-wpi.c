@@ -1,4 +1,4 @@
-#include <wirinPi.h>
+#include <wiringPi.h>;
 
 main(int argc, char **argv)
 {
