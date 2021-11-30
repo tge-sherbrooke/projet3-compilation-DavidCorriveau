@@ -3,7 +3,7 @@
     {
       "name": "Présence de rpi-gpio-wpi.c",
       "setup": "export FILE=rpi-gpio-wpi.c",
-      "run": "test -f $FILE && echo \"1\" || echo \"0\"",
+      "run": "test -f $FILE && echo 1",
       "input": "",
       "output": "1",
       "comparison": "included",
