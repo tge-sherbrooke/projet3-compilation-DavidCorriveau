@@ -22,12 +22,32 @@
     },
     {
       "name": "Compilation  rpi-gpio-wpi.c",
-      "setup": "(git clone https://github.com/WiringPi/WiringPi.git && (cd WiringPi/wiringPi && make all )) && C_INCLUDE_PATH=WiringPi/wiringPi gcc -c rpi-gpio-wpi.c -o rpi-gpio-wpi.o",
-      "run": "test rpi-gpio-wpi.0 && echo 1",
+      "setup": "(git clone https://github.com/WiringPi/WiringPi.git && (cd WiringPi/wiringPi && make all && sudo make install)) && C_INCLUDE_PATH=WiringPi/wiringPi gcc rpi-gpio-wpi.c -o rpi-gpio-wpi -lwiringpi",
+      "run": "test rpi-gpio-wpi && echo 1",
       "input": "",
       "output": "1",
       "comparison": "included",
       "timeout": 1,
+      "points": 5
+    },
+    {
+      "name": "Compilation de rpi-gpio-libc.c",
+      "setup": "gcc rpi-gpio-libc.c -o rpi-gpio-libc",
+      "run": "test -f rpi-gpio-libc && echo 1",
+      "input": "",
+      "output": "1",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 5
+    },
+    {
+      "name": "Présence du Makefile",
+      "setup": "",
+      "run": "test -f Makefile && echo 1",
+      "input": "",
+      "output": "1",
+      "comparison": "included",
+      "timeout": 10,
       "points": 5
     }
   ]
