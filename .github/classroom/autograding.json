@@ -19,6 +19,16 @@
       "comparison": "included",
       "timeout": 1,
       "points": 1
+    },
+    {
+      "name": "Compilation  rpi-gpio-wpi.c",
+      "setup": "pip install wiringpi && gcc rpi-gpio-wpi.c -o rpi-gpio-wpi",
+      "run": "test rpi-gpio-wpi && echo 1",
+      "input": "",
+      "output": "1",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 5
     }
   ]
 }
