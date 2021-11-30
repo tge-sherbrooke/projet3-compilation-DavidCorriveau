@@ -2,8 +2,8 @@
   "tests": [
     {
       "name": "Présence de rpi-gpio-wpi.c",
-      "setup": "export FILE=rpi-gpio-wpi.c",
-      "run": "test -f $FILE && echo 1",
+      "setup": "",
+      "run": "test -f rpi-gpio-wpi.c && echo 1",
       "input": "",
       "output": "1",
       "comparison": "included",
@@ -12,8 +12,8 @@
     },
     {
       "name": "Présence de rpi-gpio-libc.c",
-      "setup": "export FILE=rpi-gpio-libc.c",
-      "run": "test -f $FILE && echo \"1\" || echo \"0\"",
+      "setup": "",
+      "run": "test -f rpi-gpio-libc.c && echo 1",
       "input": "",
       "output": "1",
       "comparison": "included",
