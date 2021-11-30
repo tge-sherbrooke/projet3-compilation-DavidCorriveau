@@ -6,7 +6,7 @@
       "run": "test -f rpi-gpio-wpi.c && echo 1",
       "input": "",
       "output": "1",
-      "comparison": "included",
+      "comparison": "exact",
       "timeout": 1,
       "points": 1
     },
@@ -26,7 +26,7 @@
       "run": "test rpi-gpio-wpi && echo 1",
       "input": "",
       "output": "1",
-      "comparison": "included",
+      "comparison": "exact",
       "timeout": 1,
       "points": 5
     },
@@ -36,18 +36,58 @@
       "run": "test -f rpi-gpio-libc && echo 1",
       "input": "",
       "output": "1",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 5
+    },
+    {
+      "name": "Présence du fichier Makefile",
+      "setup": "",
+      "run": "(test -f Makefile && echo 1) || (test -f makefile && echo 1)",
+      "input": "",
+      "output": "1",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 1
+    },
+    {
+      "name": "Compilation avec WiringPi à partir du Makefile",
+      "setup": "make wpi",
+      "run": "ldd rpi-gpio | grep libwiringPi",
+      "input": "",
+      "output": "libwiringPi.so",
       "comparison": "included",
       "timeout": 1,
       "points": 5
     },
     {
-      "name": "Présence du Makefile",
+      "name": "Présence de gpio-libc.c",
       "setup": "",
-      "run": "test -f Makefile && echo 1",
+      "run": "test -f gpio-libc.c && echo 1",
       "input": "",
       "output": "1",
-      "comparison": "included",
-      "timeout": 10,
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 1
+    },
+    {
+      "name": "Présence de gpio-wpi.c",
+      "setup": "",
+      "run": "test -f gpio-wpi.c && echo 1",
+      "input": "",
+      "output": "1",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 1
+    },
+    {
+      "name": "Compilation avec libc à partir du Makefile",
+      "setup": "make libc",
+      "run": "test -z (ldd | grep libwiringPi) && echo 1",
+      "input": "",
+      "output": "1",
+      "comparison": "exact",
+      "timeout": 1,
       "points": 5
     }
   ]
