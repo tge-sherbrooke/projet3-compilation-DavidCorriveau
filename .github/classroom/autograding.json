@@ -22,7 +22,7 @@
     },
     {
       "name": "Compilation  rpi-gpio-wpi.c",
-      "setup": "(git clone https://github.com/WiringPi/WiringPi.git && (cd WiringPi/wiringPi && make all && ls -la libwiringPi.so.2.60)) && C_INCLUDE_PATH=WiringPi/wiringPi LD_LIBRARY_PATH=WiringPi/wiringPi gcc rpi-gpio-wpi.c -o rpi-gpio-wpi -lwiringpi",
+      "setup": "(git clone https://github.com/WiringPi/WiringPi.git && (cd WiringPi/wiringPi && make all )) && C_INCLUDE_PATH=WiringPi/wiringPi gcc rpi-gpio-wpi.c -o rpi-gpio-wpi -L$(CWD)/WiringPi/wiringPi -lwiringpi",
       "run": "test rpi-gpio-wpi && echo 1",
       "input": "",
       "output": "1",
