@@ -22,7 +22,7 @@
     },
     {
       "name": "Compilation  rpi-gpio-wpi.c",
-      "setup": "sudo apt update && sudo apt install -y wiringpi && gcc rpi-gpio-wpi.c -o rpi-gpio-wpi -lwiringpi",
+      "setup": "sudo apt update && sudo apt install -y wiringpi && gcc rpi-gpio-wpi.c -I/usr/local/include -L/usr/local/lib -o rpi-gpio-wpi -lwiringpi",
       "run": "test rpi-gpio-wpi && echo 1",
       "input": "",
       "output": "1",
