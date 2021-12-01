@@ -83,7 +83,7 @@
     {
       "name": "Compilation avec libc à partir du Makefile",
       "setup": "make libc",
-      "run": "test -z (ldd | grep libwiringPi) && echo 1",
+      "run": "test -z \"$(ldd | grep libwiringPi)\" && echo 1",
       "input": "",
       "output": "1",
       "comparison": "exact",
