@@ -15,5 +15,5 @@ void main( int argc, char **argv )
     {
         digitalWrite(pin, LOW);     // met la pin à off
     }
+    return 0;
 }
-
